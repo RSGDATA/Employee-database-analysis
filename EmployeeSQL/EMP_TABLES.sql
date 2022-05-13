@@ -38,10 +38,29 @@ CREATE TABLE salaries(
 	emp_no INT NOT NULL PRIMARY KEY,
 	salary INT NOT NULL
 );
+DROP TABLE employees cascade;
+
+CREATE TABLE employees(
+	emp_no INT NOT NULL,
+	emp_title_id VARCHAR(30) NOT NULL,
+	PRIMARY KEY(emp_no,emp_title_id),
+	birth_date DATE NOT NULL,
+	first_name VARCHAR(30) NOT NULL,
+	last_name VARCHAR(30) NOT NULL,
+	sex VARCHAR(30) NOT NULL,
+	hire_date DATE NOT NULL
+	
+);
+
+CREATE TABLE titles(
+	title_id VARCHAR(30) NOT NULL PRIMARY KEY,
+	title VARCHAR(30) NOT NULL
+);
 
 SELECT * FROM departments
 SELECT * FROM dept_emp
 SELECT * FROM dept_manager
 SELECT * FROM salaries
-
+SELECT * FROM employees
+SELECT * FROM titles
 
