@@ -30,7 +30,8 @@ CREATE TABLE dept_manager(
 	PRIMARY KEY (emp_no),
 	CONSTRAINT fk_departments
 		FOREIGN KEY (dept_no)
-			REFERENCES departments (dept_no)
+			REFERENCES departments(dept_no),
+	
 	
 );
 
@@ -74,6 +75,27 @@ FROM employees AS e
 LEFT JOIN salaries AS s
 ON e.emp_no=s.emp_no;
 
+
+-- 2. List first name, last name, and hire date
+-- for employees who were hired in 1986
+
+SELECT first_name, last_name, hire_date
+FROM employees 
+WHERE hire_date BETWEEN '1986-1-1' AND '1986-12-31';
+
+
+-- 3. List the manager of each department with the following information: 
+-- department number, department name, the manager's employee number,
+-- last name, first name.
+SELECT dm.dept_no, dm.emp_no, d.dept_name, e.first_name, e.last_name
+FROM dept_manager AS dm
+LEFT JOIN departments AS d
+ON dm.dept_no=d.dept_no
+LEFT JOIN employees AS e
+ON e.emp_no=dm.emp_no;
+
+--4. List the department of each employee with the following information: 
+-- employee number, last name, first name, and department name.
 
 
 
