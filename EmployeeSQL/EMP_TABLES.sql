@@ -124,8 +124,14 @@ SELECT e.emp_no, e.last_name, e.first_name AS employees, d.dept_name AS departme
 FROM employees e, departments d
 WHERE d.dept_name = 'Sales' OR d.dept_name = 'Development';
 
--- List the frequency count of employee last names 
+-- 8 List the frequency count of employee last names 
 -- (i.e., how many employees share each last name) in descending order
+
+SELECT employees.last_name,
+	COUNT(employees.last_name) AS emp_no
+FROM employees
+GROUP BY employees.last_name
+ORDER BY employees.last_name DESC;
 
 
 
