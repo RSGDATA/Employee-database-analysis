@@ -1,6 +1,6 @@
-# sql-challenge
+# Employee-database-analysis
 
-This was a challenge that required data modeling, data engineering and data analysis using postgresql  
+This was a project that required data modeling, data engineering and data analysis using postgresql  
 
 and importing the schemata using pandas to visualize trends in the given databases 
 
